@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import {
+  Button,
   Platform,
   StyleSheet,
   Text,
@@ -32,6 +33,14 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <Button
+          title='Crash JS'
+          onPress={() => {
+            const a = {}
+            const b = a.test.ok()
+            console.log(b)
+          }}
+        />
       </View>
     );
   }
